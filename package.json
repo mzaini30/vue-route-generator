@@ -22,7 +22,7 @@
     "url": "https://github.com/mzaini30/vue-route-generator.git"
   },
   "scripts": {
-    "prepublishOnly": "npm run clean && npm run test && npm run build",
+    "prepublishOnly": "npm run clean && npm run build",
     "clean": "rm -rf lib",
     "build": "tsc -p src",
     "dev": "jest --watch",

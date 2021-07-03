@@ -1,6 +1,6 @@
 {
-  "name": "vue-route-generator",
-  "version": "1.0.0",
+  "name": "vue-route-generator-jsx",
+  "version": "0.0.1",
   "author": "katashin",
   "description": "Vue Router route config generator",
   "keywords": [
@@ -15,11 +15,11 @@
   "files": [
     "lib"
   ],
-  "homepage": "https://github.com/ktsn/vue-route-generator",
-  "bugs": "https://github.com/ktsn/vue-route-generator/issues",
+  "homepage": "https://github.com/mzaini30/vue-route-generator",
+  "bugs": "https://github.com/mzaini30/vue-route-generator/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ktsn/vue-route-generator.git"
+    "url": "https://github.com/mzaini30/vue-route-generator.git"
   },
   "scripts": {
     "prepublishOnly": "npm run clean && npm run test && npm run build",

@@ -44,7 +44,8 @@ function createImport(
   chunkNamePrefix: string
 ): string {
   const code = dynamic
-    ? `function ${meta.specifier}() { return import(/* webpackChunkName: "${chunkNamePrefix}${meta.chunkName}" */ '${meta.component}') }`
+    // ? `function ${meta.specifier}() { return import(/* webpackChunkName: "${chunkNamePrefix}${meta.chunkName}" */ '${meta.component}') }`
+    ? `const ${meta.specifier} = lazy(() => import('${meta.component}'))`
     : `import ${meta.specifier} from '${meta.component}'`
 
   return meta.children
@@ -67,7 +68,7 @@ export function createRoutes(
     .map((m) => createImport(m, dynamic, chunkNamePrefix))
     .join('\n')
   const code = meta.map(createRoute).join(',')
-  return prettier.format(`${imports}\n\nexport default [${code}]`, {
+  return prettier.format(`import {lazy} from 'solid-js'\n\n${imports}\n\nexport default [${code}]`, {
     parser: 'babel',
     semi: false,
     singleQuote: true,
